@@ -95,3 +95,10 @@ input[type="text"] {
   height: auto;
   padding: 5px;
 }
+
+.result-wing {
+  max-height: 60px;
+  width: auto;
+  height: auto;
+  padding: 5px;
+}

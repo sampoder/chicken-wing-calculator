@@ -1,9 +1,23 @@
 const dp = document.getElementById("displayResult")
 
+const wings = document.getElementById("wings")
+const form = document.getElementById("form")
+
 const calculate = () => {
   if (!dp.value) return "";
   try {
-    return eval(dp.value);
+    const result = eval(dp.value)
+
+    // this checks if the calculate function has already run (by checking if there are x amounts of children in the wing div) because it is invoked once by pressing on = and another time because the form is submitted; prevents from showinig twice the amounts of wings
+    // TODO: improve this and add a clear function
+    if (wings.childNodes.length === result) return result
+    for (let i = 0; i < result; i++) {
+      const image = document.createElement("img")
+      image.src = "chickenwing/1.png"
+      image.classList.add("result-wing")
+      wings.appendChild(image)
+    }
+    return result;
   } catch (ex) {
     console.error(ex);
     return "";
@@ -27,7 +41,7 @@ document.querySelectorAll("button").forEach(elem => {
 });
 
 // handling submit allows us to catch the Enter key
-document.getElementById("form").addEventListener("submit",  e => {
+document.getElementById("form").addEventListener("submit", e => {
   e.preventDefault();
   console.log("hit")
   dp.value = calculate();

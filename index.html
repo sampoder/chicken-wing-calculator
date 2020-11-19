@@ -6,19 +6,51 @@
 	<title>Chicken Wing Calculator</title>
 	<link rel="stylesheet" href="style.css">
   <link rel="icon" href="icon.jpg">
+  <!-- <script src="https://unpkg.com/mathjs@8.0.1/lib/browser/math.js"></script> -->
 </head>
 
 <body>
   <div id="wings"></div>
   
-  <div class="container">
+  <div class="container" id="container">
+    <div id="containerHeader">
+      <div class="circle" id="redCircle"> </div>
+      <div class="circle" id="yellowCircle"> </div>
+      <div class="circle" id="greenCircle"> </div>
+    </div>
     <form id="form">
       
       <div class="display">
-        <input type="text" placeholder="0" id="displayResult" />
+        <input type="text" placeholder="0" id="displayResult" autofocus>
       </div>
 
       <div class="buttons">
+				<div class="row">
+          <button type="button" id="b7" value="^">
+						<img 
+            class="wingImg"
+            src="chickenwing/^.png" alt="exponentiate chicken wings">
+            <!-- ^ doesnt work yet -->
+          </button>
+          <button type="button" id="b8" value="log">
+						<img 
+            class="wingImg"
+            src="chickenwing/ln.png" alt="ln chicken wings">
+            <!-- ln doesnt work yet -->
+          </button>
+					<button type="button" value="clear">
+						<img 
+            class="wingImg"
+            src="chickenwing/c.png" alt="clear chicken wings">
+						<!-- C -->
+					</button>
+					<button type="button" value="delete">
+						<img 
+            class="wingImg"
+            src="chickenwing/del.png" alt="delete chicken wings">
+						<!-- ⌫ -->
+					</button>
+				</div>
         <div class="row">
           <button type="button" id="b7" value="7">
             <img 
@@ -66,7 +98,7 @@
         </div>
 
         <div class="row">
-          <button type="button" type="button" class="wing" value="1">
+          <button type="button" class="wing" value="1">
             <img 
             class="wingImg"
             src="chickenwing/1.png" alt="one chicken wing">
@@ -103,7 +135,7 @@
           <img 
             class="wingImg"
             src="chickenwing/divide.png" alt="divide chicken wings"></button>
-          <button class="red" id="equalsBtn" value="=">
+          <button type="button" red" id="equalsb" value="=">
             <img 
             class="wingImg"
             src="chickenwing/equals.png" alt="find total chicken wings">
